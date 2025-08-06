@@ -1,0 +1,12 @@
+C:\Users\DAYO\Documents\BLUE SANDS\BlueSandsLMS.Core\bin\Debug\net9.0\BlueSandsLMS.Core.deps.json
+c:\Users\DAYO\Documents\BLUE SANDS\BlueSandsLMS.Core\bin\Debug\net9.0\BlueSandsLMS.Core.dll
+c:\Users\DAYO\Documents\BLUE SANDS\BlueSandsLMS.Core\bin\Debug\net9.0\BlueSandsLMS.Core.pdb
+c:\Users\DAYO\Documents\BLUE SANDS\BlueSandsLMS.Core\obj\Debug\net9.0\BlueSandsLMS.Core.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\DAYO\Documents\BLUE SANDS\BlueSandsLMS.Core\obj\Debug\net9.0\BlueSandsLMS.Core.AssemblyInfoInputs.cache
+c:\Users\DAYO\Documents\BLUE SANDS\BlueSandsLMS.Core\obj\Debug\net9.0\BlueSandsLMS.Core.AssemblyInfo.cs
+c:\Users\DAYO\Documents\BLUE SANDS\BlueSandsLMS.Core\obj\Debug\net9.0\BlueSandsLMS.Core.csproj.CoreCompileInputs.cache
+c:\Users\DAYO\Documents\BLUE SANDS\BlueSandsLMS.Core\obj\Debug\net9.0\BlueSandsLMS.Core.dll
+c:\Users\DAYO\Documents\BLUE SANDS\BlueSandsLMS.Core\obj\Debug\net9.0\refint\BlueSandsLMS.Core.dll
+c:\Users\DAYO\Documents\BLUE SANDS\BlueSandsLMS.Core\obj\Debug\net9.0\BlueSandsLMS.Core.pdb
+C:\Users\DAYO\Documents\BLUE SANDS\BlueSandsLMS.Core\obj\Debug\net9.0\ref\BlueSandsLMS.Core.dll
+c:\Users\DAYO\Documents\BLUE SANDS\BlueSandsLMS.Core\obj\Debug\net9.0\BlueSandsLMS.Core.sourcelink.json
