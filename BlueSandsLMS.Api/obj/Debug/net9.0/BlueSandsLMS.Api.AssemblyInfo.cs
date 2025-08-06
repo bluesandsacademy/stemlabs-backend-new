@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlueSandsLMS.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b64d193e0fd21e43b7128e56ffb29ca6984ddc54")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8fcdeeeef1ef7094e19bf11f1b839e0ccc5151f2")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlueSandsLMS.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlueSandsLMS.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
