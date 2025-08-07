@@ -5,6 +5,10 @@ namespace BlueSandsLMS.Core.Entities
         public Guid Id { get; set; }
         public string Email { get; set; } = null!;
         public string FullName { get; set; } = null!;
+        public string? Phone { get; set; }
+public string? Gender { get; set; }
+public string? Country { get; set; }
+public string? Dob { get; set; }
         public string PasswordHash { get; set; } = null!;
         public Guid? SchoolId { get; set; }
         public Guid RoleId { get; set; }        // FK to Role

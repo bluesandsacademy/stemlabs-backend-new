@@ -32,16 +32,20 @@ namespace BlueSandsLMS.Application.Services
             var studentRole = await _db.Roles.FirstAsync(r => r.Name == "Student");
 
             var user = new User
-            {
-                Id           = Guid.NewGuid(),
-                FullName     = dto.FullName,
-                Email        = dto.Email,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password),
-                RoleId       = studentRole.Id,
-                IsActive     = true,
-                DateCreated  = DateTime.UtcNow
-                // SchoolId left null → assigned later by Admin
-            };
+{
+    Id           = Guid.NewGuid(),
+    FullName     = dto.FullName,
+    Email        = dto.Email,
+    PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password),
+    RoleId       = studentRole.Id,
+    IsActive     = true,
+    DateCreated  = DateTime.UtcNow,
+    Phone        = dto.Phone,
+    Gender       = dto.Gender,
+    Country      = dto.Country,
+    Dob          = dto.Dob
+};
+
 
             _db.Users.Add(user);
             await _db.SaveChangesAsync();

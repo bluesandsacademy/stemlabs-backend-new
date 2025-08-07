@@ -4,20 +4,19 @@ using BlueSandsLMS.Application.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Microsoft.OpenApi.Models;   // << Add this
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure DbContext
+// DbContext
 builder.Services.AddDbContext<BlueSandsLMSDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Register AuthService
+// Services
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ISchoolService, SchoolService>();
 
-
-// JWT Authentication
+// JWT Auth
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -30,22 +29,30 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidIssuer              = builder.Configuration["Jwt:Issuer"],
             ValidAudience            = builder.Configuration["Jwt:Audience"],
             IssuerSigningKey         = new SymmetricSecurityKey(
-                                          Encoding.UTF8.GetBytes(
-                                            builder.Configuration["Jwt:Secret"] 
-                                            ?? throw new InvalidOperationException("Missing Jwt:Secret")
-                                          ))
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"] ?? throw new InvalidOperationException("Missing Jwt:Secret")))
         };
     });
 
-builder.Services.AddAuthorization(); // ensure AddAuthorization is called
+// ✅ CORS (for frontend access)
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000", "https://www.bluesandstemlabs.com")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
+});
 
+// Controllers + Swagger
+builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "BlueSandsLMS API", Version = "v1" });
 
-    // Define the BearerAuth scheme
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name         = "Authorization",
@@ -56,7 +63,6 @@ builder.Services.AddSwaggerGen(c =>
         Description  = "Enter your JWT like: Bearer {your token}"
     });
 
-    // Require BearerAuth for all operations by default
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         [ new OpenApiSecurityScheme {
@@ -76,9 +82,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseAuthentication();  
+// 🟩 Middleware Order Matters
+app.UseCors("AllowFrontend");
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

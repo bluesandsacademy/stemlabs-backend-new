@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlueSandsLMS.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b64d193e0fd21e43b7128e56ffb29ca6984ddc54")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f504645309e91a797a952dae5a4f9197c53cf7d9")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlueSandsLMS.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlueSandsLMS.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
