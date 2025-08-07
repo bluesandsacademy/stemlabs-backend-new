@@ -1,0 +1,17 @@
+{
+  "build": {
+    "builder": "dotnet",
+    "buildCommand": "dotnet build",
+    "startCommand": "dotnet BlueSandsLMS.Api.dll"
+  },
+  "deploy": {
+    "restartPolicyType": "ON_FAILURE"
+  },
+  "envs": {
+    "ConnectionStrings__DefaultConnection": "Data Source=SQL1004.site4now.net;Initial Catalog=db_abc878_bluesands;User Id=db_abc878_bluesands_admin;Password=bluesands1234",
+    "Jwt__Issuer": "BlueSandsLMS",
+    "Jwt__Audience": "BlueSandsLMSUsers",
+    "Jwt__Secret": "p9CqtV2JfRQZTLT0zPjyDaf5X94uWbS7r3Lv4BMnE5sNQyViAUztFswF7HaKh0wC",
+    "ASPNETCORE_ENVIRONMENT": "Production"
+  }
+}
