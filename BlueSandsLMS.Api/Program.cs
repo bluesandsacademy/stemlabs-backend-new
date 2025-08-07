@@ -38,7 +38,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:3000", "https://www.bluesandstemlabs.com")
+        policy.WithOrigins("http://localhost:3000", "https://www.bluesandstemlabs.com", "https://app.bluesandstemlabs.com")
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
