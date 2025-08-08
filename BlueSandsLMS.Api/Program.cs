@@ -40,7 +40,6 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins(
                 "http://localhost:3000", 
-                "https://www.bluesandstemlabs.com",
                 "https://app.bluesandstemlabs.com") 
               .AllowAnyHeader()
               .AllowAnyMethod()
